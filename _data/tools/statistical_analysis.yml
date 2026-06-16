@@ -33,3 +33,20 @@
   description: Permutation-based nonparametric inference for neuroimaging group-level statistics.
   url: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Randomise
   language: C++
+
+- name: ENIGMA VBM
+  description: Fully automated DARTEL VBM pipeline with QC and sensitivity analyses, standardized for multi-site mega-analysis.
+  url: https://sites.google.com/view/enigmavbm
+  language: MATLAB
+
+- name: ENIGMA Toolbox
+  description: Python/MATLAB ecosystem for accessing 100+ ENIGMA datasets and contextualizing findings with connectomic and transcriptomic data.
+  url: https://github.com/MICA-MNI/ENIGMA
+  github: MICA-MNI/ENIGMA
+  language: Python/MATLAB
+
+- name: IBMMA
+  description: Image-based meta- and mega-analysis framework for mass-univariate analysis across voxel, vertex, and connectome features from multi-site data.
+  url: https://github.com/sundelinustc/IBMMA
+  github: sundelinustc/IBMMA
+  language: Python

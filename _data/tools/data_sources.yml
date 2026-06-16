@@ -1,4 +1,4 @@
-# Data Sources
+# Resources & Data
 # Fields:
 #   name:        display name
 #   description: one sentence — what it does, not why it matters
@@ -42,3 +42,7 @@
 - name: UK Biobank
   description: Population-level brain imaging from 100,000+ UK participants; access requires application.
   url: https://www.ukbiobank.ac.uk
+
+- name: NeuroStars
+  description: Q&A forum for neuroinformatics, neuroimaging methods, and tool support.
+  url: https://neurostars.org
