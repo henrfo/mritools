@@ -157,6 +157,22 @@ body {
   padding-right: 0;
 }
 
+.section-header td {
+  padding-top: 28px;
+  padding-bottom: 6px;
+  padding-right: 0;
+  border-bottom: 1px solid var(--text);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.section-header:first-child td {
+  padding-top: 12px;
+}
+
 .tool-table tr.inactive td {
   opacity: 0.5;
 }

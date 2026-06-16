@@ -12,9 +12,10 @@ title: MRI Tools
 <div class="controls">
   <div class="pills" id="pills">
     <button class="pill selected" data-filter="all">All</button>
-    {% for cat in site.data.categories %}
-    <button class="pill" data-filter="{{ cat.id }}">{{ cat.name }}</button>
-    {% endfor %}
+    <button class="pill" data-filter="prepare">Prepare</button>
+    <button class="pill" data-filter="analyze">Analyze</button>
+    <button class="pill" data-filter="support">Support</button>
+    <button class="pill" data-filter="resources">Resources & Data</button>
   </div>
   <input class="search" id="search" type="search" placeholder="Search tools…" autocomplete="off">
 </div>
@@ -42,7 +43,6 @@ title: MRI Tools
       <th aria-label="Health"></th>
       <th>Tool</th>
       <th>Description</th>
-      <th>Stage</th>
       <th>Language</th>
     </tr>
   </thead>
@@ -50,6 +50,9 @@ title: MRI Tools
     {% for cat in site.data.categories %}
       {% assign tools = site.data.tools[cat.id] %}
       {% if tools %}
+        <tr class="section-header" data-category="{{ cat.id }}">
+          <td colspan="4">{{ cat.name }}</td>
+        </tr>
         {% for tool in tools %}
           {% assign hkey = tool.github | replace: '/', '-' %}
           {% assign health = site.data.health[hkey] %}
@@ -62,7 +65,7 @@ title: MRI Tools
             {% assign row_class = '' %}
           {% else %}
             {% assign dot = 'dot-inactive' %}
-            {% assign row_class = 'inactive' %}
+            {% assign row_class = '' %}
           {% endif %}
           <tr class="{{ row_class }}"
               data-category="{{ cat.id }}"
@@ -71,7 +74,6 @@ title: MRI Tools
             <td><span class="dot {{ dot }}" title="{{ status }}"></span></td>
             <td class="tool-name"><a href="{{ tool.url }}" target="_blank" rel="noopener noreferrer">{{ tool.name }}</a></td>
             <td class="tool-desc">{{ tool.description }}</td>
-            <td class="tool-stage">{{ cat.name }}</td>
             <td class="tool-lang">{{ tool.language }}</td>
           </tr>
         {% endfor %}
@@ -85,23 +87,46 @@ title: MRI Tools
 </footer>
 
 <script>
-  const pills  = document.querySelectorAll('.pill');
-  const search = document.getElementById('search');
-  const rows   = document.querySelectorAll('#tool-list tr');
-  let activeFilter = 'all';
+  const groups = {
+    all:       null,
+    prepare:   ['data_conversion', 'qc', 'preprocessing', 'registration_normalization'],
+    analyze:   ['statistical_analysis', 'connectivity'],
+    support:   ['visualization', 'libraries', 'workflow_managers'],
+    resources: ['data_sources']
+  };
 
-  const countEl = document.getElementById('tool-count');
+  const pills    = document.querySelectorAll('.pill');
+  const search   = document.getElementById('search');
+  const allRows  = document.querySelectorAll('#tool-list tr');
+  const toolRows = document.querySelectorAll('#tool-list tr:not(.section-header)');
+  const headers  = document.querySelectorAll('#tool-list tr.section-header');
+  const countEl  = document.getElementById('tool-count');
+  let activeFilter = 'all';
 
   function applyFilters() {
     const q = search.value.toLowerCase().trim();
+    const allowed = groups[activeFilter];
+
+    // Show/hide tool rows
     let visible = 0;
-    rows.forEach(row => {
-      const catMatch  = activeFilter === 'all' || row.dataset.category === activeFilter;
+    toolRows.forEach(row => {
+      const catMatch  = !allowed || allowed.includes(row.dataset.category);
       const textMatch = !q || row.dataset.name.includes(q) || row.dataset.desc.includes(q);
       const show = catMatch && textMatch;
       row.classList.toggle('hidden', !show);
       if (show) visible++;
     });
+
+    // Show section headers only if their category is allowed AND has at least one visible tool
+    headers.forEach(header => {
+      const cat = header.dataset.category;
+      const catAllowed = !allowed || allowed.includes(cat);
+      const hasVisible = catAllowed && [...toolRows].some(
+        r => r.dataset.category === cat && !r.classList.contains('hidden')
+      );
+      header.classList.toggle('hidden', !hasVisible);
+    });
+
     countEl.textContent = visible + ' tool' + (visible === 1 ? '' : 's');
   }
 
