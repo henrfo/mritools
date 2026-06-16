@@ -19,6 +19,23 @@ title: MRI Tools
   <input class="search" id="search" type="search" placeholder="Search tools…" autocomplete="off">
 </div>
 
+<div class="meta">
+  <span id="tool-count">
+    {%- assign total = 0 -%}
+    {%- for cat in site.data.categories -%}
+      {%- assign tools = site.data.tools[cat.id] -%}
+      {%- if tools -%}{%- assign total = total | plus: tools.size -%}{%- endif -%}
+    {%- endfor -%}
+    {{ total }} tools
+  </span>
+  <span class="meta-sep">·</span>
+  <span class="legend-item"><span class="dot dot-active"></span> Active</span>
+  <span class="legend-item"><span class="dot dot-quiet"></span> Quiet</span>
+  <span class="legend-item"><span class="dot dot-inactive"></span> Inactive</span>
+  <span class="meta-sep">·</span>
+  <span>Updated weekly via GitHub API</span>
+</div>
+
 <table class="tool-table" aria-label="MRI tools directory">
   <thead>
     <tr>
@@ -64,10 +81,7 @@ title: MRI Tools
 </table>
 
 <footer class="footer">
-  <span class="legend-item"><span class="dot dot-active"></span> Active</span>
-  <span class="legend-item"><span class="dot dot-quiet"></span> Quiet</span>
-  <span class="legend-item"><span class="dot dot-inactive"></span> Inactive</span>
-  <span>Updated weekly via GitHub API.</span>
+  <a href="https://github.com/openmritools/openmritools.github.io" target="_blank" rel="noopener noreferrer">Contribute on GitHub</a>
 </footer>
 
 <script>
@@ -76,13 +90,19 @@ title: MRI Tools
   const rows   = document.querySelectorAll('#tool-list tr');
   let activeFilter = 'all';
 
+  const countEl = document.getElementById('tool-count');
+
   function applyFilters() {
     const q = search.value.toLowerCase().trim();
+    let visible = 0;
     rows.forEach(row => {
       const catMatch  = activeFilter === 'all' || row.dataset.category === activeFilter;
       const textMatch = !q || row.dataset.name.includes(q) || row.dataset.desc.includes(q);
-      row.classList.toggle('hidden', !(catMatch && textMatch));
+      const show = catMatch && textMatch;
+      row.classList.toggle('hidden', !show);
+      if (show) visible++;
     });
+    countEl.textContent = visible + ' tool' + (visible === 1 ? '' : 's');
   }
 
   pills.forEach(pill => {

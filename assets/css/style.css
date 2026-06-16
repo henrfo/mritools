@@ -106,6 +106,22 @@ body {
   border-color: #aaaaaa;
 }
 
+/* ── Meta bar ── */
+
+.meta {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.meta-sep {
+  color: var(--hairline);
+}
+
 /* ── Table ── */
 
 .tool-table {
@@ -185,11 +201,12 @@ body {
   padding-top: 14px;
   border-top: 1px solid var(--hairline);
   font-size: 12px;
+}
+
+.footer a {
   color: var(--muted);
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .legend-item {
