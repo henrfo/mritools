@@ -14,7 +14,8 @@ title: MRI Tools
     <button class="pill selected" data-filter="all">All</button>
     <button class="pill" data-filter="prepare">Prepare</button>
     <button class="pill" data-filter="analyze">Analyze</button>
-    <button class="pill" data-filter="support">Support</button>
+    <button class="pill" data-filter="visualize">Visualize</button>
+    <button class="pill" data-filter="infrastructure">Infrastructure</button>
     <button class="pill" data-filter="resources">Resources & Data</button>
   </div>
   <input class="search" id="search" type="search" placeholder="Search tools…" autocomplete="off">
@@ -89,11 +90,12 @@ title: MRI Tools
 
 <script>
   const groups = {
-    all:       null,
-    prepare:   ['data_conversion', 'qc', 'preprocessing', 'registration_normalization'],
-    analyze:   ['statistical_analysis', 'connectivity'],
-    support:   ['visualization', 'libraries', 'workflow_managers'],
-    resources: ['data_sources']
+    all:            null,
+    prepare:        ['data_conversion', 'qc', 'preprocessing', 'registration_normalization'],
+    analyze:        ['statistical_analysis', 'connectivity'],
+    visualize:      ['visualization', 'libraries'],
+    infrastructure: ['workflow_managers'],
+    resources:      ['data_sources']
   };
 
   const pills    = document.querySelectorAll('.pill');
