@@ -1,0 +1,36 @@
+# Preregistration & Publishing
+
+- name: OSF
+  description: Preregister studies, share data, code, and materials, and get DOIs; the central platform for open science.
+  url: https://osf.io
+  date_added: 2026-06-16
+
+- name: AsPredicted
+  description: Quick, lightweight preregistration for studies — fill in nine questions and lock your hypotheses before data collection.
+  url: https://aspredicted.org
+  date_added: 2026-06-16
+
+- name: protocols.io
+  description: Share and discover step-by-step research protocols with versioning and DOI assignment.
+  url: https://www.protocols.io
+  date_added: 2026-06-16
+
+- name: bioRxiv
+  description: Preprint server for biology and neuroscience; post before peer review to share findings early.
+  url: https://www.biorxiv.org
+  date_added: 2026-06-16
+
+- name: NeuroLibre
+  description: Reproducible neuroscience preprints with live, executable code and data embedded in the publication.
+  url: https://neurolibre.org
+  date_added: 2026-06-16
+
+- name: Zenodo
+  description: Archive code, data, or posters and receive a citable DOI; integrates directly with GitHub releases.
+  url: https://zenodo.org
+  date_added: 2026-06-16
+
+- name: PROSPERO
+  description: International registry for preregistering systematic reviews and meta-analyses before they begin.
+  url: https://www.crd.york.ac.uk/prospero
+  date_added: 2026-06-16

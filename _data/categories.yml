@@ -25,5 +25,11 @@
 - id: libraries
   name: Libraries
 
-- id: data_sources
-  name: Resources & Data
+- id: datasets
+  name: Datasets
+
+- id: preregistration
+  name: Preregistration & Publishing
+
+- id: community
+  name: Community & Organizations

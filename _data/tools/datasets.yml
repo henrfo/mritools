@@ -1,0 +1,47 @@
+# Datasets
+
+- name: OpenNeuro
+  description: Free platform for sharing and downloading BIDS-formatted neuroimaging datasets; over 1,000 public datasets.
+  url: https://openneuro.org
+  github: OpenNeuroOrg/openneuro
+  date_added: 2026-06-16
+
+- name: NeuroVault
+  description: Repository for sharing unthresholded statistical brain maps from published studies.
+  url: https://neurovault.org
+  date_added: 2026-06-16
+
+- name: Human Connectome Project
+  description: High-resolution structural, functional, and diffusion MRI from 1,200 healthy adults.
+  url: https://www.humanconnectome.org
+  date_added: 2026-06-16
+
+- name: ADNI
+  description: Longitudinal MRI and PET data from participants across the Alzheimer's disease spectrum.
+  url: https://adni.loni.usc.edu
+  date_added: 2026-06-16
+
+- name: OASIS
+  description: Cross-sectional and longitudinal structural brain MRI datasets for aging and dementia research.
+  url: https://www.oasis-brains.org
+  date_added: 2026-06-16
+
+- name: IXI
+  description: Around 600 structural MRI scans from healthy subjects collected at three London hospitals.
+  url: https://brain-development.org/ixi-dataset
+  date_added: 2026-06-16
+
+- name: ABCD
+  description: Longitudinal brain imaging study tracking 10,000+ adolescents across the US.
+  url: https://abcdstudy.org
+  date_added: 2026-06-16
+
+- name: UK Biobank
+  description: Population-level brain imaging from 100,000+ UK participants; access requires application.
+  url: https://www.ukbiobank.ac.uk
+  date_added: 2026-06-16
+
+- name: HBCD
+  description: Longitudinal study of early brain and cognitive development tracking children from birth to age ten with structural and functional MRI.
+  url: https://hbcdstudy.org
+  date_added: 2026-06-16
