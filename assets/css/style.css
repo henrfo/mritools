@@ -134,8 +134,14 @@ body {
   text-underline-offset: 2px;
 }
 
+.search-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
 .search {
-  width: 260px;
+  width: 240px;
   padding: 5px 8px;
   font-size: 13px;
   font-family: inherit;
@@ -146,6 +152,22 @@ body {
 }
 
 .search:focus {
+  border-color: #aaaaaa;
+}
+
+.lang-select {
+  padding: 5px 6px;
+  font-size: 12px;
+  font-family: inherit;
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  outline: none;
+  color: var(--muted);
+  background: #fff;
+  cursor: pointer;
+}
+
+.lang-select:focus {
   border-color: #aaaaaa;
 }
 
