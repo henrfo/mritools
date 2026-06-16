@@ -29,6 +29,28 @@ body {
 
 /* ── Header ── */
 
+.site-header-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.site-nav {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .site-title {
   font-size: 20px;
   font-weight: 600;
