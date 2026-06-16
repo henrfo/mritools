@@ -20,7 +20,8 @@ Edit the appropriate file in `_data/tools/`:
 | `connectivity.yml` | Connectivity |
 | `visualization.yml` | Visualization |
 | `workflow_managers.yml` | Workflow Managers |
-| `data_sources.yml` | Data Sources |
+| `libraries.yml` | Libraries |
+| `data_sources.yml` | Resources & Data |
 
 Each entry follows this format:
 

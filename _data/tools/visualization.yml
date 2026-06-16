@@ -29,3 +29,9 @@
   url: https://github.com/nipreps/nireports
   github: nipreps/nireports
   language: Python
+
+- name: ITK-SNAP
+  description: Interactive tool for segmentation of 3D medical images with manual editing and automatic active contour methods.
+  url: https://github.com/pyushkevich/itksnap
+  github: pyushkevich/itksnap
+  language: C++

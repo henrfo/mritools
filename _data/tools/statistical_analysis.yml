@@ -50,3 +50,9 @@
   url: https://github.com/sundelinustc/IBMMA
   github: sundelinustc/IBMMA
   language: Python
+
+- name: Neuromaps
+  description: Maps brain annotations onto standard surfaces and compares them against transcriptomic and receptor reference atlases.
+  url: https://github.com/netneurolab/neuromaps
+  github: netneurolab/neuromaps
+  language: Python

@@ -55,3 +55,38 @@
   description: Suite of programs for fMRI preprocessing, regression modelling, and statistical analysis.
   url: https://afni.nimh.nih.gov
   language: C
+
+- name: Tedana
+  description: Multi-echo fMRI denoising — separates BOLD signal from noise using T2* decay across echo times.
+  url: https://github.com/ME-ICA/tedana
+  github: ME-ICA/tedana
+  language: Python
+
+- name: FastSurfer
+  description: Deep learning-based cortical surface reconstruction and parcellation; produces FreeSurfer-compatible output in minutes.
+  url: https://github.com/Deep-MI/FastSurfer
+  github: Deep-MI/FastSurfer
+  language: Python
+
+- name: SynthStrip
+  description: Skull-stripping tool using deep learning; works across contrasts and resolutions without retraining.
+  url: https://surfer.nmr.mgh.harvard.edu/docs/synthstrip
+  language: Python
+
+- name: SynthSeg
+  description: Contrast-agnostic brain segmentation via deep learning; handles any MRI contrast without fine-tuning.
+  url: https://github.com/BBillot/SynthSeg
+  github: BBillot/SynthSeg
+  language: Python
+
+- name: C-PAC
+  description: Configurable Pipeline for the Analysis of Connectomes — a flexible fMRIPrep alternative with GUI configuration.
+  url: https://github.com/FCP-INDI/C-PAC
+  github: FCP-INDI/C-PAC
+  language: Python
+
+- name: ASLPrep
+  description: Arterial spin labeling preprocessing pipeline from the NiPreps family, producing CBF maps and QC reports.
+  url: https://github.com/nipreps/aslprep
+  github: nipreps/aslprep
+  language: Python

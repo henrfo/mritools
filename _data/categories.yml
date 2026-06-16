@@ -22,5 +22,8 @@
 - id: workflow_managers
   name: Workflow Managers
 
+- id: libraries
+  name: Libraries
+
 - id: data_sources
   name: Resources & Data
