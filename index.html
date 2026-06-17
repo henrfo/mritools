@@ -102,7 +102,9 @@ title: MRI Tools
           <button class="modality-option" data-modality="multi">Multi-modal</button>
         </div>
       </th>
-      <th class="stars-th">Stars</th>
+      <th class="stars-th">
+        <button class="stars-sort-btn" id="stars-sort-btn">Stars <span id="stars-arrow"></span></button>
+      </th>
     </tr>
   </thead>
   <tbody id="tool-list">
@@ -142,7 +144,8 @@ title: MRI Tools
               data-desc="{{ tool.description | downcase }}"
               data-added="{{ tool.date_added }}"
               data-lang="{{ tool.language }}"
-              data-modality="{{ tool.modality }}">
+              data-modality="{{ tool.modality }}"
+              {% if health.stars %}data-stars="{{ health.stars }}"{% endif %}>
             <td><span class="dot {{ dot }}" title="{{ status }}"></span></td>
             <td class="tool-name">
               <a href="{{ tool.url }}" target="_blank" rel="noopener noreferrer">{{ tool.name }}</a>
@@ -222,6 +225,17 @@ title: MRI Tools
   let activeSubFilter = null;
   let activeLang      = null;
   let activeModality  = null;
+  let starsSortDir    = null; // null | 'desc' | 'asc'
+
+  const starsBtn  = document.getElementById('stars-sort-btn');
+  const starsArrow = document.getElementById('stars-arrow');
+
+  starsBtn.addEventListener('click', () => {
+    starsSortDir = starsSortDir === null ? 'desc' : starsSortDir === 'desc' ? 'asc' : null;
+    starsArrow.textContent = starsSortDir === 'desc' ? '↓' : starsSortDir === 'asc' ? '↑' : '';
+    starsBtn.classList.toggle('active', starsSortDir !== null);
+    applyFilters();
+  });
 
   function setLang(lang) {
     activeLang = lang || null;
@@ -339,6 +353,25 @@ title: MRI Tools
     });
 
     countEl.textContent = visible + ' tool' + (visible === 1 ? '' : 's');
+
+    if (starsSortDir) {
+      const visibleRows = [...toolRows].filter(r => !r.classList.contains('hidden'));
+      visibleRows.sort((a, b) => {
+        const sa = parseInt(a.dataset.stars) || 0;
+        const sb = parseInt(b.dataset.stars) || 0;
+        return starsSortDir === 'desc' ? sb - sa : sa - sb;
+      });
+      const seenCats = new Set();
+      for (const row of visibleRows) {
+        const cat = row.dataset.category;
+        if (!seenCats.has(cat)) {
+          const header = [...headers].find(h => h.dataset.category === cat);
+          if (header) { header.classList.remove('hidden'); tbody.appendChild(header); }
+          seenCats.add(cat);
+        }
+        tbody.appendChild(row);
+      }
+    }
   }
 
   function showSubPills(filter) {
