@@ -13,6 +13,7 @@ permalink: /contribute/
   <div class="field">
     <label for="tool-name">Tool name</label>
     <input id="tool-name" type="text" name="tool_name" required autocomplete="off">
+    <div id="tool-hint" class="tool-hint"></div>
   </div>
 
   <div class="field">
@@ -32,6 +33,31 @@ permalink: /contribute/
 
   <button type="submit" class="submit-btn">Submit</button>
 </form>
+
+<script>
+  const existingTools = [
+    {% for cat in site.data.categories %}
+    {% assign cat_tools = site.data.tools[cat.id] %}
+    {% for tool in cat_tools %}
+    { name: {{ tool.name | jsonify }}, url: {{ tool.url | jsonify }} },
+    {% endfor %}
+    {% endfor %}
+  ];
+
+  const nameInput = document.getElementById('tool-name');
+  const hint = document.getElementById('tool-hint');
+
+  nameInput.addEventListener('input', () => {
+    const q = nameInput.value.trim().toLowerCase();
+    if (q.length < 2) { hint.innerHTML = ''; return; }
+    const match = existingTools.find(t => t.name.toLowerCase().includes(q));
+    if (match) {
+      hint.innerHTML = 'ℹ️ <strong>' + match.name + '</strong> is already listed — <a href="{{ '/' | relative_url }}">see it in the directory</a>.';
+    } else {
+      hint.innerHTML = '';
+    }
+  });
+</script>
 
 <footer class="footer">
   <a href="{{ '/' | relative_url }}">← Back to directory</a>

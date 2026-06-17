@@ -416,6 +416,19 @@ body {
   letter-spacing: 0;
 }
 
+.tool-hint {
+  margin-top: 5px;
+  font-size: 12px;
+  color: var(--muted);
+  min-height: 1em;
+}
+
+.tool-hint a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .field input,
 .field textarea {
   font-family: inherit;
