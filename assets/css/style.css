@@ -286,13 +286,15 @@ body {
 .tool-desc,
 .tool-stage,
 .tool-lang,
-.tool-modality {
+.tool-modality,
+.tool-stars {
   color: var(--muted);
 }
 
 .tool-stage,
 .tool-lang,
 .tool-modality,
+.tool-stars,
 .col-date {
   white-space: nowrap;
 }
@@ -540,11 +542,13 @@ body {
     gap: 6px;
   }
 
-  /* Hide language and modality columns — keep dot, tool name, description */
+  /* Hide language, modality, stars columns — keep dot, tool name, description */
   .lang-th,
   .tool-lang,
   .modality-th,
-  .tool-modality {
+  .tool-modality,
+  .stars-th,
+  .tool-stars {
     display: none;
   }
 

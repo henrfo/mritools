@@ -102,6 +102,7 @@ title: MRI Tools
           <button class="modality-option" data-modality="multi">Multi-modal</button>
         </div>
       </th>
+      <th class="stars-th">Stars</th>
     </tr>
   </thead>
   <tbody id="tool-list">
@@ -109,7 +110,7 @@ title: MRI Tools
       {% assign tools = site.data.tools[cat.id] %}
       {% if tools %}
         <tr class="section-header" data-category="{{ cat.id }}">
-          <td colspan="6">{{ cat.name }}</td>
+          <td colspan="7">{{ cat.name }}</td>
         </tr>
         {% for tool in tools %}
           {% if tool.github %}
@@ -133,6 +134,7 @@ title: MRI Tools
             {% assign dot = 'dot-external' %}
             {% assign row_class = '' %}
             {% assign status = 'external' %}
+            {% assign health = nil %}
           {% endif %}
           <tr class="{{ row_class }}"
               data-category="{{ cat.id }}"
@@ -149,6 +151,7 @@ title: MRI Tools
             <td class="col-date" data-date="{{ tool.date_added }}"></td>
             <td class="tool-lang">{{ tool.language }}</td>
             <td class="tool-modality">{%- if tool.modality == 'fMRI' -%}fMRI{%- elsif tool.modality == 'structural' -%}Structural{%- elsif tool.modality == 'diffusion' -%}Diffusion{%- elsif tool.modality == 'ASL' -%}ASL{%- elsif tool.modality == 'multi' -%}Multi-modal{%- endif -%}</td>
+            <td class="tool-stars"{% if health.stars %} data-stars="{{ health.stars }}"{% endif %}></td>
           </tr>
         {% endfor %}
       {% endif %}
@@ -173,6 +176,14 @@ title: MRI Tools
     const d = new Date(cell.dataset.date);
     if (!isNaN(d)) {
       cell.textContent = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    }
+  });
+
+  // Pre-populate star counts
+  document.querySelectorAll('.tool-stars[data-stars]').forEach(cell => {
+    const n = parseInt(cell.dataset.stars);
+    if (!isNaN(n) && n > 0) {
+      cell.textContent = n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : n;
     }
   });
 
