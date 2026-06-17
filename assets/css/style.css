@@ -30,8 +30,8 @@ body {
 /* ── Header ── */
 
 .site-header-row {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: baseline;
 }
 
@@ -39,7 +39,6 @@ body {
   display: flex;
   gap: 16px;
   font-size: 12px;
-  justify-self: end;
 }
 
 .site-nav a {
@@ -56,12 +55,6 @@ body {
   font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.2px;
-}
-
-.site-tagline {
-  text-align: center;
-  font-size: 13px;
-  color: var(--muted);
 }
 
 .site-subtitle {
