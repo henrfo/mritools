@@ -342,7 +342,7 @@ title: MRI Tools
       const sorted = [...toolRows]
         .filter(r => r.dataset.added)
         .sort((a, b) => new Date(b.dataset.added) - new Date(a.dataset.added))
-        .slice(0, 10);
+        .slice(0, 25);
       top10 = new Set(sorted);
 
       // Reorder DOM: place section header then tools in date-descending order
