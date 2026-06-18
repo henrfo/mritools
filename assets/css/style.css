@@ -578,6 +578,18 @@ body {
     display: none;
   }
 
+  /* Hide filter status tags — filters aren't accessible on mobile */
+  #lang-tag,
+  #modality-tag {
+    display: none !important;
+  }
+
+  /* Allow nav to wrap if three links don't fit */
+  .site-nav {
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+
   .tool-desc {
     font-size: 12px;
   }
