@@ -152,3 +152,81 @@
   language: C++
   date_added: 2026-06-17
   modality: fMRI
+
+- name: TrUE-Net
+  description: Triplanar U-Net ensemble for WMH segmentation on FLAIR, with pretrained models and fine-tuning support.
+  url: https://github.com/v-sundaresan/truenet
+  github: v-sundaresan/truenet
+  language: Python
+  modality: structural
+  date_added: 2026-06-18
+
+- name: LST-AI
+  description: Deep learning ensemble (3× 3D U-Net) for MS and WMH lesion segmentation with automatic McDonald criteria annotation.
+  url: https://github.com/CompImg/LST-AI
+  github: CompImg/LST-AI
+  language: Python
+  modality: structural
+  date_added: 2026-06-18
+
+- name: SHIVA-WMH
+  description: 3D U-Net for WMH segmentation optimized for detecting small punctate lesions in younger subjects.
+  url: https://github.com/pboutinaud/SHIVA_WMH
+  github: pboutinaud/SHIVA_WMH
+  language: Python
+  modality: structural
+  date_added: 2026-06-18
+
+- name: segcsvd
+  description: CNN-based WMH segmentation on FLAIR and perivascular space segmentation on T1, using SynthSeg-derived anatomical context.
+  url: https://github.com/AICONSlab/segcsvd
+  github: AICONSlab/segcsvd
+  language: Python
+  modality: structural
+  date_added: 2026-06-18
+
+- name: HyperMapp3r
+  description: Bayesian CNN for WMH segmentation with uncertainty estimation.
+  url: https://github.com/AICONSlab/HyperMapp3r
+  github: AICONSlab/HyperMapp3r
+  language: Python
+  modality: structural
+  date_added: 2026-06-18
+
+- name: DeepWMH
+  description: Annotation-free WMH segmentation using deep learning trained without manually labeled data.
+  url: https://github.com/lchdl/DeepWMH
+  github: lchdl/DeepWMH
+  language: Python
+  modality: structural
+  date_added: 2026-06-18
+
+- name: wmh_seg
+  description: Transformer-based U-Net for WMH segmentation validated across 1.5T, 3T, and 7T FLAIR.
+  url: https://github.com/jinghangli98/wmh_seg
+  github: jinghangli98/wmh_seg
+  language: Python
+  modality: structural
+  date_added: 2026-06-18
+
+- name: W2MHS
+  description: Random forest-based WMH segmentation and quantification toolbox for aging and Alzheimer's research.
+  url: https://github.com/SichaoYang/W2MHS
+  github: SichaoYang/W2MHS
+  language: MATLAB
+  modality: structural
+  date_added: 2026-06-18
+
+- name: LST
+  description: SPM toolbox for lesion segmentation with lesion growth (LGA) and lesion prediction (LPA) algorithms.
+  url: https://www.applied-statistics.de/lst.html
+  language: MATLAB
+  modality: structural
+  date_added: 2026-06-18
+
+- name: UBO Detector
+  description: Cluster-based fully automated WMH extraction pipeline with built-in pretrained KNN classifier.
+  url: https://www.cheba.unsw.edu.au
+  language: MATLAB
+  modality: structural
+  date_added: 2026-06-18
