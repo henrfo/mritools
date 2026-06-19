@@ -48,7 +48,7 @@ TOPICS = [
     "brain-imaging",
 ]
 
-MIN_STARS = 3  # ignore brand-new repos with no traction yet
+MIN_STARS = 25  # only surface repos with meaningful community adoption
 
 NOW    = datetime.now(timezone.utc)
 SINCE  = NOW - timedelta(days=7)
