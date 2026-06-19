@@ -17,3 +17,11 @@
   language: Web
   date_added: 2026-06-19
   modality: multi
+
+- name: BIDS Validator
+  description: Checks datasets for compliance with the BIDS standard, flagging missing files and metadata errors.
+  url: https://github.com/bids-standard/bids-validator
+  github: bids-standard/bids-validator
+  language: JavaScript
+  date_added: 2026-06-19
+  modality: multi

@@ -21,3 +21,11 @@
   language: Python
   date_added: 2026-06-16
   modality: multi
+
+- name: wonkyconn
+  description: Evaluates residual motion artefacts in fMRI functional connectivity and generates visual QC reports.
+  url: https://github.com/HALFpipe/wonkyconn
+  github: HALFpipe/wonkyconn
+  language: Python
+  date_added: 2026-06-19
+  modality: fMRI

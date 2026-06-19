@@ -45,3 +45,11 @@
   language: Python
   date_added: 2026-06-19
   modality: multi
+
+- name: qMRLab
+  description: MATLAB/Python toolbox for simulation, analysis, and visualization of quantitative MRI data including T1, T2, magnetization transfer, and diffusion models.
+  url: https://github.com/qMRLab/qMRLab
+  github: qMRLab/qMRLab
+  language: MATLAB/Python
+  date_added: 2026-06-19
+  modality: multi

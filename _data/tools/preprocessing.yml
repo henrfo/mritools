@@ -263,3 +263,11 @@
   language: Python
   date_added: 2026-06-19
   modality: structural
+
+- name: hMRI toolbox
+  description: SPM toolbox for creating quantitative MRI maps (T1, MT, PD, R2*) from multi-parameter mapping acquisitions for in vivo histology.
+  url: https://github.com/hMRI-group/hMRI-toolbox
+  github: hMRI-group/hMRI-toolbox
+  language: MATLAB
+  date_added: 2026-06-19
+  modality: structural
