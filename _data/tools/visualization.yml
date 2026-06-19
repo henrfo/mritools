@@ -77,6 +77,14 @@
   modality: diffusion
   date_added: 2026-06-18
 
+- name: PySurfer
+  description: Python library for visualization and statistical analysis of cortical surface representations from neuroimaging data.
+  url: https://github.com/nipy/PySurfer
+  github: nipy/PySurfer
+  language: Python
+  date_added: 2026-06-20
+  modality: structural
+
 - name: pycortex
   description: Interactive 3D surface viewer for fMRI data; renders cortical activations on inflated and flat maps in a browser.
   url: https://github.com/gallantlab/pycortex

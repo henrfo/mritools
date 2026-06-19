@@ -6,6 +6,22 @@
 #   github:      owner/repo  (required for health checks)
 #   language:    primary implementation language
 
+- name: nipy
+  description: Foundational Python package for fMRI analysis including model fitting, statistical testing, and signal processing.
+  url: https://github.com/nipy/nipy
+  github: nipy/nipy
+  language: Python
+  date_added: 2026-06-20
+  modality: fMRI
+
+- name: nitime
+  description: Python library for timeseries analysis of neuroscience data, with tools for spectral analysis, coherence, and granger causality.
+  url: https://github.com/nipy/nitime
+  github: nipy/nitime
+  language: Python
+  date_added: 2026-06-20
+  modality: fMRI
+
 - name: PyBIDS
   description: Python library for querying, loading, and writing BIDS-formatted datasets.
   url: https://github.com/bids-standard/pybids
