@@ -21,7 +21,7 @@
   modality: fMRI
 
 - name: Fitlins
-  description: Estimates first-level fMRI models specified in BIDS statistical model format.
+  description: Tool for estimating linear models defined by the BIDS Stats-Models specification, applied to BIDS-formatted datasets.
   url: https://github.com/poldracklab/fitlins
   github: poldracklab/fitlins
   language: Python
