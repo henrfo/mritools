@@ -67,3 +67,9 @@
   url: https://fcon_1000.projects.nitrc.org/indi/cmi_healthy_brain_network/
   modality: multi
   date_added: 2026-06-18
+
+- name: NeuroBagel
+  description: Ecosystem for distributed neuroimaging dataset harmonization and search.
+  url: https://neurobagel.org
+  github: neurobagel/bagel-cli
+  date_added: 2026-06-16
