@@ -70,6 +70,19 @@ body {
   font-size: 13px;
 }
 
+.back-link {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* ── Controls ── */
 
 .controls {
